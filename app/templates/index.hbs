@@ -1,0 +1,23 @@
+<GeneralContainer>
+  <div>
+    <ul class="card-wrapper">
+      {{#each this.productItems as |product|}}
+      <LinkTo @route="item" @model={{product.id}}>
+        <li class="card">
+          <img src={{product.download_url}} alt="">
+          <h3>{{product.author}}</h3>
+        </li>
+      </LinkTo>
+      {{/each}}
+
+    </ul>
+
+    <div class="btn-group">
+      <button class="button" {{on "click" this.previousPage }} disabled={{this.disablePreviousButton}}>Previous</button>
+      <button class="button" {{on "click" this.nextPage }}>Next</button>
+    </div>
+
+  </div>
+
+
+</GeneralContainer>
